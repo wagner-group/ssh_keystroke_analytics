@@ -1,0 +1,11 @@
+scripts/*
+.DS_Store
+.Rhistory
+__pycache__/*
+env/*
+*.swp
+datasets/*
+models/*
+*.png
+analysis/*
+old/*
