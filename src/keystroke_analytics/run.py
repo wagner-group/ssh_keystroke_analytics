@@ -1,6 +1,6 @@
-from data import *
-from model import *
-from visual import *
+from .data import *
+from .model import *
+from .visual import *
 
 import torch.nn as nn
 import torch.nn.functional as F
@@ -441,12 +441,12 @@ def main():
     parser.add_argument('data_dir', type=str, help="Dataset path")
     parser.add_argument('--testing-dir', type=str, nargs="*", default=[], help="Testing dataset path")
     parser.add_argument('--detailed-eval', default=0, action="count", help="Detailed evaluation")
-    parser.add_argument('-N', type=int, default=7, help="Run length")
-    parser.add_argument('-M', type=int, default=5000, help="Minimum number of runs per user")
+    parser.add_argument('-N', type=int, default=512, help="Run length")
+    parser.add_argument('-M', type=int, default=5120, help="Minimum number of runs per user", help=argparse.SUPPRESS)
     parser.add_argument('-B', type=int, default=32, help="Batch size")
-    parser.add_argument('-P', type=int, default=0, help="Number of parititions")
+    parser.add_argument('-P', type=int, default=8, help="Number of parititions")
     parser.add_argument('-p', type=int, default=8, help="Bins per partition")
-    parser.add_argument('-e', type=int, default=30, help="Positional encoding dimension")
+    parser.add_argument('-e', type=int, default=-1, help="Positional encoding dimension")
     parser.add_argument('-L', type=float, default=2e-5, help="Learning rate")
     parser.add_argument('-l', type=str, default=None, help="Model to load")
     parser.add_argument('-R', type=int, default=0, help="Randomness seed")
@@ -459,7 +459,7 @@ def main():
     parser.add_argument('--E2', type=int, default=-1, help="Increasing dropout epochs")
     parser.add_argument('--thead', type=int, default=4, help="Transformer heads")
     parser.add_argument('--tlayer', type=int, default=4, help="Transformer layers")
-    parser.add_argument('--threshold', type=float, default=0.98, help="TP threshold")
+    parser.add_argument('--threshold', type=float, default=0.98, help="TP threshold", help=argparse.SUPPRESS)
     parser.add_argument('--predict', action="count", default=0, help="Predict")
     parser.add_argument('-G', type=float, default=0.95, help="Gamma for LR decay")
     parser.add_argument('-H', type=int, default=5, help="Scheduler step")
