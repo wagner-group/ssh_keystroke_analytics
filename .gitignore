@@ -9,3 +9,6 @@ models/*
 *.png
 analysis/*
 old/*
+build/*
+dist/*
+*egg-info*
