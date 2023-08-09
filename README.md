@@ -1,7 +1,7 @@
 # Network Detection of Interactive SSH Impostors Using Deep Learning
 
 This repo contains the code for training and evaluating SSH keystroke authentication models. 
-See our paper for more details.
+See our [paper](https://www.usenix.org/system/files/usenixsecurity23-piet.pdf) for more details.
 
 ## Installation
 
