@@ -1,13 +1,13 @@
 # Network Detection of Interactive SSH Impostors Using Deep Learning
 
 This repo contains the code for training and evaluating SSH keystroke authentication models. 
-See our paper for more details.
+See our [paper](https://www.usenix.org/system/files/usenixsecurity23-piet.pdf) for more details.
 
 ## Installation
 
 * Clone the repo
 * Setup a virtual environement: `python3 -m venv env && source env/bin/activate`
-* Run the installation scripts `./install.sh`
+* Run the installation script `./install.sh`
 
 
 ## Usage
@@ -16,9 +16,9 @@ See our paper for more details.
 ```
 keystroke_analytics [type_of_model] [data_format] [data_directory] [options]
 ```
-* `type_of_model`: sets the model type. Options are `authentication`, `classification`, `classification_without_others`, `TypeNet`, `CNNGRU` and `FSNet`. Use `authentication` to  reproduce the paper model.
-* `data_format`: set the type of data partitioning. Use `keystrokes_alternate` to reproduce the paper
-* `data_directory`: path to the data
+* `type_of_model`: sets the model type. Options are `authentication`, `classification`, `classification_without_others`, `TypeNet`, `CNNGRU` and `FSNet`. Use `authentication` to  reproduce the model in the paper.
+* `data_format`: set the type of data partitioning. Use `keystrokes_alternate` to reproduce the paper.
+* `data_directory`: path to the data.
 
 
 There is a long list of options to tune your model:
@@ -26,7 +26,7 @@ There is a long list of options to tune your model:
 --testing-dir str+:i paths to testing datasets
 --detailed-eval: run a detailed evaluation (recommended)
 -N int: Max length of SSH connection (default: 512)
--n int: Min length of SSH connection
+-n int: Min length of SSH connection (default: 8)
 -B int: Batch size (default: 32)
 -P int: Number of partitions (default: 8)
 -p int: Number of bins per partition (default: 8)
